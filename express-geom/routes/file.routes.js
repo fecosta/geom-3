@@ -58,10 +58,10 @@ router.get('/pdf', (req, res) => {
   }
 
   // validate file exists
-  const fileExists = db.get(`files.${category}`).find({ country, year: parseInt(year) }).value();
+  /*const fileExists = db.get(`files.${category}`).find({ country, year: parseInt(year) }).value();
   if (!fileExists) {
     return res.status(404).json({ success: false, message: 'file not found' });
-  }
+  }*/
 
   const fileName = `${country}_${year}_all.pdf`;
   const filePath = path.join(__dirname, '..', 'pdfs', category, fileName);
